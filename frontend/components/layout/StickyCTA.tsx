@@ -23,7 +23,7 @@ export function StickyCTA() {
         <>
             {/* WhatsApp Floating Button (Desktop & Mobile) */}
             <motion.a
-                href="https://wa.me/919876543210"
+                href="https://wa.me/918875509344"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ scale: 0 }}
@@ -44,9 +44,11 @@ export function StickyCTA() {
                         className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t p-4 md:hidden shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]"
                     >
                         <div className="flex gap-3">
-                            <Button variant="outline" className="flex-1 border-primary text-primary">
-                                <Phone className="mr-2 h-4 w-4" /> Call
-                            </Button>
+                            <a href="tel:8875509344" className="flex-1">
+                                <Button variant="outline" className="w-full border-primary text-primary">
+                                    <Phone className="mr-2 h-4 w-4" /> Call
+                                </Button>
+                            </a>
                             <Button variant="cta" className="flex-1" onClick={openBooking}>
                                 Book Demo
                             </Button>
