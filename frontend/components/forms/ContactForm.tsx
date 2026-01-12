@@ -5,6 +5,7 @@ import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { API_URL } from "@/lib/config";
 
 export function ContactForm() {
     const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ export function ContactForm() {
         setIsLoading(true);
 
         try {
-            const res = await fetch("http://localhost:5001/api/requests", {
+            const res = await fetch(`${API_URL}/api/requests`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
