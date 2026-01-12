@@ -171,10 +171,10 @@ export default function AboutPage() {
                     </div>
                     <div className="grid md:grid-cols-4 gap-8">
                         {[
-                            { name: "Ajeet Ojha", role: "Co-Founder", img: "/assets/team-ajeet.jpg" },
-                            { name: "Kamal Prajapat", role: "Co-Founder", img: "/assets/team-kamal.png" },
-                            { name: "Sourabh Choudhary", role: "Co-Founder", img: "/assets/team-sourabh.png" },
-                            { name: "Happy Singh", role: "Co-Founder", img: "/assets/team-happy.png" },
+                            { name: "Ajeet Ojha", role: "", img: "/assets/team-ajeet.jpg" },
+                            { name: "Kamal Prajapat", role: "", img: "/assets/team-kamal.png" },
+                            { name: "Sourabh Choudhary", role: "", img: "/assets/team-sourabh.png" },
+                            { name: "Happy Singh", role: "", img: "/assets/team-happy.png" },
                         ].map((member, i) => (
                             <motion.div
                                 key={i}
