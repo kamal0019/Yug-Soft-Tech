@@ -25,4 +25,4 @@ const formSchema = new mongoose.Schema({
     },
 });
 
-export const Request = mongoose.model("Request", formSchema);
+export const Request = mongoose.models.Request || mongoose.model("Request", formSchema);
