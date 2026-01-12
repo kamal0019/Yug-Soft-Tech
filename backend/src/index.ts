@@ -16,9 +16,19 @@ import newsletterRoutes from './routes/newsletterRoutes';
 dotenv.config();
 
 // Connect to Database
-if (process.env.NODE_ENV !== 'test') {
-    connectDB();
-}
+// Connect to Database Middleware
+const dbConnectionMiddleware = async (req: Request, res: Response, next: any) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        console.error('Database connection failed:', error);
+        res.status(500).json({ message: 'Database connection failed' });
+    }
+};
+
+// Apply DB connection middleware to API routes
+app.use('/api', dbConnectionMiddleware);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
