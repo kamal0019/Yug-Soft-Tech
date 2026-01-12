@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { API_URL } from "@/lib/config";
 
 export function Footer() {
     return (
@@ -100,9 +101,6 @@ function NewsletterForm() {
         e.preventDefault();
         setStatus("loading");
 
-        import { API_URL } from "@/lib/config";
-
-        // ... (in NewsletterForm component)
         try {
             const res = await fetch(`${API_URL}/api/newsletter/subscribe`, {
                 method: "POST",
