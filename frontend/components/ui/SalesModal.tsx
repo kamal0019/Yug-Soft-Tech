@@ -39,7 +39,6 @@ export function SalesModal({ isOpen, onClose }: SalesModalProps) {
                         </div>
                         <div className="text-left">
                             <h3 className="font-bold text-lg text-slate-900">{contactInfo.name}</h3>
-                            <p className="text-blue-600 font-medium text-sm">{contactInfo.role}</p>
                         </div>
                     </div>
 
