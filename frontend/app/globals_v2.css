@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #2563eb;
+    --color-primary-foreground: #ffffff;
+    --color-secondary: #f59e0b;
+    --color-secondary-foreground: #ffffff;
+    --color-accent: #7c3aed;
+    --color-accent-foreground: #ffffff;
+    --color-background: #ffffff;
+    --color-foreground: #0f172a;
+    --color-muted: #f8fafc;
+    --color-muted-foreground: #64748b;
+
+    --font-sans: var(--font-inter), sans-serif;
+    --font-heading: var(--font-outfit), sans-serif;
+
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-fade-in-up: fadeInUp 0.5s ease-out forwards;
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes marquee2 {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-lg;
+    }
+
+    .glass-dark {
+        @apply bg-slate-900/80 backdrop-blur-lg border border-white/10 shadow-xl;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-accent;
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-marquee {
+        animation: marquee 25s linear infinite;
+    }
+
+    .animate-marquee2 {
+        animation: marquee2 25s linear infinite;
+    }
+
+    /* Button Shine Effect */
+    .btn-shine {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-shine::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent);
+        transition: 0.5s;
+    }
+
+    .btn-shine:hover::after {
+        left: 100%;
+    }
+}

@@ -1,0 +1,83 @@
+
+> ourweb@0.1.0 build
+> next build
+
+▲ Next.js 16.1.1 (Turbopack)
+
+  Creating an optimized production build ...
+Error: `@theme` blocks must only contain custom properties or `@keyframes`.
+
+  @theme {
+>   .animate-float {
+>     animation: float 6s ease-in-out infinite;
+>   }
+  }
+  
+    [2m[at C:\ourweb\node_modules\tailwindcss\dist\lib.js:34:10][0m
+    [2m[at Rr (C:\ourweb\node_modules\tailwindcss\dist\lib.js:3:1718)][0m
+    [2m[at _ (C:\ourweb\node_modules\tailwindcss\dist\lib.js:3:1377)][0m
+    [2m[at C:\ourweb\node_modules\tailwindcss\dist\lib.js:32:7179][0m
+    [2m[at Rr (C:\ourweb\node_modules\tailwindcss\dist\lib.js:3:1718)][0m
+    [2m[at _ (C:\ourweb\node_modules\tailwindcss\dist\lib.js:3:1377)][0m
+    [2m[at un (C:\ourweb\node_modules\tailwindcss\dist\lib.js:32:2712)][0m
+    [2m[at async cn (C:\ourweb\node_modules\tailwindcss\dist\lib.js:38:631)][0m
+    [2m[at async Xr (C:\ourweb\node_modules\@tailwindcss\node\dist\index.js:10:3417)][0m
+    [2m[at async I (C:\ourweb\node_modules\@tailwindcss\postcss\dist\index.js:10:3977)][0m
+Turbopack build encountered 1 warnings:
+[next]/internal/font/google/ad66f9afd8947f86-s.woff2
+Error while requesting resource
+There was an issue establishing a connection while requesting https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2
+
+
+
+> Build error occurred
+Error: Turbopack build failed with 2 errors:
+./app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: C:\ourweb\app\globals.css:1:1: `@theme` blocks must only contain custom properties or `@keyframes`.
+
+  @theme {
+>   .animate-float {
+>     animation: float 6s ease-in-out infinite;
+>   }
+  }
+  
+    at Input.error (node_modules/postcss/lib/input.js:135:16) [C:\ourweb\.next\build\chunks\node_modules_fe693df6._.js:4651:22]
+    at Root.error (node_modules/postcss/lib/node.js:146:32) [C:\ourweb\.next\build\chunks\node_modules_fe693df6._.js:928:38]
+    [at Object.Once (C:\ourweb\node_modules\@tailwindcss\postcss\dist\index.js:10:6911)]
+    at async LazyResult.runAsync (node_modules/postcss/lib/lazy-result.js:293:11) [C:\ourweb\.next\build\chunks\node_modules_fe693df6._.js:6206:21]
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [C:\ourweb\.next\build\chunks\[root-of-the-server]__51225daf._.js:146:36]
+    at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23) [C:\ourweb\.next\build\chunks\[root-of-the-server]__974941ed._.js:443:31]
+
+Import trace:
+  Client Component Browser:
+    ./app/globals.css [Client Component Browser]
+    ./app/layout.tsx [Server Component]
+
+
+[next]/internal/font/google/inter_5901b7c6.module.css:26:9
+Module not found: Can't resolve '@vercel/turbopack-next/internal/font/google/font'
+[0m [90m 24 |[39m   font[33m-[39mdisplay[33m:[39m swap[33m;[39m
+ [90m 25 |[39m   src[33m:[39m url([33m@[39mvercel[33m/[39mturbopack[33m-[39mnext[33m/[39minternal[33m/[39mfont[33m/[39mgoogle[35m/font?{%22url%22:%22https:/[39m[33m/[39mfonts[33m.[39mgstatic[33m.[39mcom[33m/[39ms[33m/[39minter[33m/[39mv20[33m/[39m[33mUcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n[39m[33m-[39mwU[33m.[39mwoff2[33m%[39m[35m22[39m[33m,[39m[33m%[39m[35m22[39mpreload[33m%[39m[35m22[39m[33m:[39m[36mfalse[39m[33m,[39m[33m%[39m[35m22[39mhas_size_adjust[33m%[39m[35m22[39m[33m:[39m[36mtrue[39m}) format([32m'woff2'[39m)[33m;[39m
+[31m[1m>[22m[39m[90m 26 |[39m   unicode[33m-[39mrange[33m:[39m [33mU[39m[33m+[39m[35m1[39m[33mF00[39m[33m-[39m[35m1[39m[33mFFF[39m[33m;[39m
+ [90m    |[39m         [31m[1m^[22m[39m
+ [90m 27 |[39m }
+ [90m 28 |[39m [90m/* greek */[39m
+ [90m 29 |[39m [33m@[39mfont[33m-[39mface {[0m
+
+Import map: Resolved by import map
+
+
+Import trace:
+  Server Component:
+    [next]/internal/font/google/inter_5901b7c6.module.css
+    [next]/internal/font/google/inter_5901b7c6.js
+    ./app/layout.tsx
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34) [C:\ourweb\.next\build\chunks\[root-of-the-server]__51225daf._.js:146:36])
+    at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23) [C:\ourweb\.next\build\chunks\[root-of-the-server]__974941ed._.js:443:31])
+    at <unknown> ([next]/internal/font/google/inter_5901b7c6.module.css:26:9)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
