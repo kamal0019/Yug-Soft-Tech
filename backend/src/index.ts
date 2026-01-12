@@ -16,6 +16,9 @@ import newsletterRoutes from './routes/newsletterRoutes';
 dotenv.config();
 
 // Connect to Database
+const app = express();
+const PORT = process.env.PORT || 5000;
+
 // Connect to Database Middleware
 const dbConnectionMiddleware = async (req: Request, res: Response, next: any) => {
     try {
@@ -29,9 +32,6 @@ const dbConnectionMiddleware = async (req: Request, res: Response, next: any) =>
 
 // Apply DB connection middleware to API routes
 app.use('/api', dbConnectionMiddleware);
-
-const app = express();
-const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(helmet()); // Security Headers
