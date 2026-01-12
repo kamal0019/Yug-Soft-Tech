@@ -28,6 +28,12 @@ app.use(helmet()); // Security Headers
 app.use(cors());
 app.use(express.json());
 
+// Request logging for debugging
+app.use((req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl}`);
+    next();
+});
+
 // Data Sanitization against NoSQL Query Injection
 // app.use(mongoSanitize());
 
