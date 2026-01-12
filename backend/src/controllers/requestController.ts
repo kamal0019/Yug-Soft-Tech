@@ -29,6 +29,6 @@ export const createRequest = async (req: Request, res: Response) => {
 
         res.status(201).json({ message: 'Request submitted successfully', request: newRequest });
     } catch (error: any) {
-        res.status(500).json({ message: 'Server error', error: error.message });
+        res.status(500).json({ message: `Server error: ${error.message}` });
     }
 };
