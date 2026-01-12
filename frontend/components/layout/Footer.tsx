@@ -100,8 +100,11 @@ function NewsletterForm() {
         e.preventDefault();
         setStatus("loading");
 
+        import { API_URL } from "@/lib/config";
+
+        // ... (in NewsletterForm component)
         try {
-            const res = await fetch("http://localhost:5001/api/newsletter/subscribe", {
+            const res = await fetch(`${API_URL}/api/newsletter/subscribe`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
