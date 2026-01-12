@@ -29,10 +29,13 @@ app.use(cors());
 app.use(express.json());
 
 // Data Sanitization against NoSQL Query Injection
-app.use(mongoSanitize());
+// app.use(mongoSanitize());
 
 // Data Sanitization against XSS
-app.use(xss());
+// app.use(xss());
+
+// Trust Proxy for Vercel
+app.set('trust proxy', 1);
 
 // Rate Limiting
 const limiter = rateLimit({
