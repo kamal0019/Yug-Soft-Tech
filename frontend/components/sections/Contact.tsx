@@ -32,7 +32,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <p className="font-bold text-foreground">Call Us</p>
-                                    <p className="text-muted-foreground">+91 98765 43210</p>
+                                    <p className="text-muted-foreground">+91 88755 09344</p>
                                 </div>
                             </div>
 
@@ -42,7 +42,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <p className="font-bold text-foreground">Email Us</p>
-                                    <p className="text-muted-foreground">hello@yugsofttech.com</p>
+                                    <p className="text-muted-foreground">yugsofttech@gmail.com</p>
                                 </div>
                             </div>
 
@@ -53,8 +53,8 @@ export function Contact() {
                                 <div>
                                     <p className="font-bold text-foreground">Visit Us</p>
                                     <p className="text-muted-foreground">
-                                        123 Education Lane, Tech Park,<br />
-                                        Bangalore, India 560102
+                                        20,Govind Nagar 1st Niwaru Road, Jhotwara Jaipur,<br />
+                                        Rajasthan, India 302012
                                     </p>
                                 </div>
                             </div>
