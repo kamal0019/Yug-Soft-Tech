@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Heart, Zap, Coffee, ArrowRight, Check, MapPin, Smile, BookOpen, Sun } from "lucide-react";
 import { AnimatedText } from "@/components/ui/AnimatedText";
+import { ApplicationModal } from "@/components/ui/ApplicationModal";
 
 export default function CareersPage() {
     return (
@@ -148,11 +149,11 @@ export default function CareersPage() {
 
                     <div className="space-y-4">
                         {[
-                            { role: "Senior Frontend Engineer", dept: "Engineering", loc: "Remote", type: "Full-time" },
-                            { role: "Product Designer", dept: "Design", loc: "New York, NY", type: "Full-time" },
-                            { role: "Customer Success Manager", dept: "Sales", loc: "London, UK", type: "Full-time" },
-                            { role: "Backend Developer (Go)", dept: "Engineering", loc: "Remote", type: "Contract" },
-                            { role: "Data Scientist", dept: "Data", loc: "San Francisco, CA", type: "Full-time" },
+                            { role: "Senior Frontend Engineer", dept: "Engineering", loc: "Work From Office", type: "Full-time" },
+                            { role: "Product Designer", dept: "Design", loc: "Work From Office", type: "Full-time" },
+                            { role: "Customer Success Manager", dept: "Sales", loc: "Work From Office", type: "Full-time" },
+                            { role: "Backend Developer (Go)", dept: "Engineering", loc: "Work From Office", type: "Contract" },
+                            { role: "Data Scientist", dept: "Data", loc: "Work From Office", type: "Full-time" },
                         ].map((job, i) => (
                             <motion.div
                                 key={i}
@@ -172,9 +173,11 @@ export default function CareersPage() {
                                         <span className="flex items-center gap-1 bg-slate-100 px-3 py-1 rounded-full"><BookOpen size={14} /> {job.type}</span>
                                     </div>
                                 </div>
-                                <Button className="text-white bg-slate-900 group-hover:bg-blue-600 transition-colors rounded-full px-6">
-                                    Apply Now
-                                </Button>
+                                <ApplicationModal jobTitle={job.role}>
+                                    <Button className="text-white bg-slate-900 group-hover:bg-blue-600 transition-colors rounded-full px-6">
+                                        Apply Now
+                                    </Button>
+                                </ApplicationModal>
                             </motion.div>
                         ))}
                     </div>

@@ -17,6 +17,7 @@ import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { StickyCTA } from "@/components/layout/StickyCTA";
+import { Toaster } from "sonner";
 
 import { BookingProvider } from "@/context/BookingContext";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <StickyCTA />
+          <Toaster />
         </BookingProvider>
       </body>
     </html>
