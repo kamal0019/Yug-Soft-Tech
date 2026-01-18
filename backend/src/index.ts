@@ -12,6 +12,7 @@ import requestRoutes from './routes/requestRoutes';
 import formRoutes from './routes/formRoutes';
 
 import newsletterRoutes from './routes/newsletterRoutes';
+import applicationRoutes from './routes/applicationRoutes';
 
 dotenv.config();
 
@@ -66,6 +67,8 @@ app.use(limiter);
 app.use('/api/auth', authRoutes);
 app.use('/api/requests', requestRoutes);
 app.use('/api/newsletter', newsletterRoutes);
+app.use('/api/applications', applicationRoutes);
+app.use('/uploads', express.static('uploads'));
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Yug Soft-Tech Backend is running!');
