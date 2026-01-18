@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Check, UserCog, GraduationCap, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageSlider } from "@/components/ui/ImageSlider";
+import Link from "next/link";
 
 const roles = [
     {
@@ -78,8 +79,10 @@ export function ERPFeatures() {
                         </div>
 
                         <div className="mt-10">
-                            <Button variant="cta" size="lg">
-                                Explore All Features
+                            <Button asChild variant="cta" size="lg">
+                                <Link href="/features">
+                                    Explore All Features
+                                </Link>
                             </Button>
                         </div>
                     </motion.div>
