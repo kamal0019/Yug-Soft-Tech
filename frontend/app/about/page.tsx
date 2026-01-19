@@ -20,7 +20,7 @@ export default function AboutPage() {
                         transition={{ duration: 0.6 }}
                     >
                         <span className="inline-block py-1 px-3 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 text-sm font-semibold mb-6">
-                            Established 2020
+                            Established 2026
                         </span>
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-8 tracking-tight leading-tight">
                             Driving the Future <br />
