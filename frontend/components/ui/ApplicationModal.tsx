@@ -26,7 +26,8 @@ interface ApplicationModalProps {
 export function ApplicationModal({ jobTitle, children }: ApplicationModalProps) {
     const [open, setOpen] = useState(false);
     const [loading, setLoading] = useState(false);
-    const { register, handleSubmit, reset, formState: { errors } } = useForm<ApplicationFormInputs>();
+    const { register, handleSubmit, reset, watch, formState: { errors } } = useForm<ApplicationFormInputs>();
+    const resumeFile = watch("resume");
 
     const onSubmit: SubmitHandler<ApplicationFormInputs> = async (data) => {
         setLoading(true);
@@ -39,7 +40,7 @@ export function ApplicationModal({ jobTitle, children }: ApplicationModalProps) 
         formData.append("resume", data.resume[0]);
 
         try {
-            const response = await fetch("http://localhost:5000/api/applications", {
+            const response = await fetch("/api/applications", {
                 method: "POST",
                 body: formData,
             });
@@ -53,7 +54,7 @@ export function ApplicationModal({ jobTitle, children }: ApplicationModalProps) 
             reset();
             setOpen(false);
         } catch (error: any) {
-            console.error(error);
+            console.error("Application submission error:", error);
             toast.error(error.message || "Something went wrong. Please try again.");
         } finally {
             setLoading(false);
@@ -121,12 +122,27 @@ export function ApplicationModal({ jobTitle, children }: ApplicationModalProps) 
                                     type="file"
                                     className="hidden"
                                     accept=".pdf,.doc,.docx"
-                                    {...register("resume", { required: "Resume is required" })}
+                                    {...register("resume", {
+                                        required: "Resume is required",
+                                        onChange: (e) => {
+                                            if (e.target.files && e.target.files.length > 0) {
+                                                const fileName = e.target.files[0].name;
+                                                // Function to update UI can be added here if using local state
+                                                // For now, let's rely on watching the value
+                                            }
+                                        }
+                                    })}
                                 />
                             </label>
                         </div>
                         {errors.resume && <p className="text-sm text-red-500">{errors.resume.message}</p>}
-                        {/* Optional: Show selected filename */}
+
+                        {/* Display selected filename */}
+                        {resumeFile && resumeFile.length > 0 && (
+                            <p className="text-sm text-center mt-2 text-green-600 font-medium">
+                                Selected: {resumeFile[0].name}
+                            </p>
+                        )}
                     </div>
 
                     <div className="space-y-2">

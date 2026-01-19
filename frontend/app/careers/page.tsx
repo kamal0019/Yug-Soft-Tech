@@ -5,12 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Briefcase, Heart, Zap, Coffee, ArrowRight, Check, MapPin, Smile, BookOpen, Sun } from "lucide-react";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { ApplicationModal } from "@/components/ui/ApplicationModal";
+import Link from "next/link";
 
 export default function CareersPage() {
     return (
         <div className="min-h-screen bg-slate-50 font-sans">
             {/* Hero */}
-            <section className="pt-32 pb-24 lg:pt-48 lg:pb-32 bg-slate-900 text-white relative overflow-hidden">
+            <section className="pt-44 pb-24 lg:pt-52 lg:pb-32 bg-slate-900 text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
                 <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-50 to-transparent z-10" />
 
@@ -42,24 +43,26 @@ export default function CareersPage() {
                     >
                         We're on a mission to empower schools globally. Join a team of dreamers, doers, and educators creating impact at scale.
                     </motion.p>
+
+
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2 }}
                         className="flex flex-col sm:flex-row gap-4 justify-center"
                     >
-                        <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white rounded-full px-8 h-12 text-lg">
-                            View Open Positions
+                        <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white rounded-full px-8 h-12 text-lg" asChild>
+                            <Link href="#positions">View Open Positions</Link>
                         </Button>
-                        <Button size="lg" variant="outline" className="border-slate-600 text-slate-300 hover:bg-white/10 hover:text-white rounded-full px-8 h-12 text-lg">
-                            Life at Yug Soft-Tech
+                        <Button size="lg" variant="outline" className="border-slate-600 text-slate-300 hover:bg-white/10 hover:text-white rounded-full px-8 h-12 text-lg" asChild>
+                            <Link href="#life">Life at Yug Soft-Tech</Link>
                         </Button>
                     </motion.div>
                 </div>
             </section>
 
             {/* Culture Gallery */}
-            <section className="py-20 overflow-hidden">
+            <section id="life" className="py-20 overflow-hidden">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 auto-rows-[200px]">
                         <div className="col-span-2 row-span-2 rounded-3xl overflow-hidden relative group">
@@ -143,7 +146,7 @@ export default function CareersPage() {
             </section>
 
             {/* Open Positions */}
-            <section className="py-20">
+            <section id="positions" className="py-20">
                 <div className="container mx-auto px-4 max-w-5xl">
                     <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center">Open Positions</h2>
 
