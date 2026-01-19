@@ -7,9 +7,9 @@ import { AnimatedText } from "@/components/ui/AnimatedText";
 
 export default function AboutPage() {
     return (
-        <div className="min-h-screen bg-slate-50 font-sans">
+        <div className="min-h-screen bg-slate-50 font-sans pt-20">
             {/* Hero Section */}
-            <section className="relative pt-44 pb-32 lg:pt-52 lg:pb-40 overflow-hidden bg-slate-900">
+            <section className="relative py-20 lg:py-32 overflow-hidden bg-slate-900">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20" />
                 <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/80 to-slate-50" />
 

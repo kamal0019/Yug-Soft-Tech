@@ -9,9 +9,9 @@ import Link from "next/link";
 
 export default function CareersPage() {
     return (
-        <div className="min-h-screen bg-slate-50 font-sans">
+        <div className="min-h-screen bg-slate-50 font-sans pt-20">
             {/* Hero */}
-            <section className="pt-44 pb-24 lg:pt-52 lg:pb-32 bg-slate-900 text-white relative overflow-hidden">
+            <section className="py-20 lg:py-32 bg-slate-900 text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
                 <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-50 to-transparent z-10" />
 
