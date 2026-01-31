@@ -50,7 +50,7 @@ export function ContactForm() {
                         <label htmlFor="name" className="text-sm font-medium">Name</label>
                         <Input
                             id="name"
-                            placeholder="John Doe"
+                            
                             value={formData.name}
                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             required
@@ -72,7 +72,7 @@ export function ContactForm() {
                     <label htmlFor="school" className="text-sm font-medium">School Name</label>
                     <Input
                         id="school"
-                        placeholder="St. Xavier's High School"
+                       
                         value={formData.schoolName}
                         onChange={(e) => setFormData({ ...formData, schoolName: e.target.value })}
                         required
@@ -84,7 +84,7 @@ export function ContactForm() {
                     <Input
                         id="phone"
                         type="tel"
-                        placeholder="+91 98765 43210"
+                       
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         required
@@ -95,7 +95,7 @@ export function ContactForm() {
                     <label htmlFor="message" className="text-sm font-medium">Message (Optional)</label>
                     <Textarea
                         id="message"
-                        placeholder="Tell us about your requirements..."
+                       
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />
